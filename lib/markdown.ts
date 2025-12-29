@@ -13,7 +13,16 @@ function rehypeRewriteRelativeImageSrc() {
       if (node.tagName !== 'img') return;
       const src = node.properties?.src;
       if (typeof src !== 'string') return;
-      if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('/')) return;
+      // Keep already-absolute URLs and non-http schemes intact (e.g., data: for base64 images).
+      if (
+        src.startsWith('http://') ||
+        src.startsWith('https://') ||
+        src.startsWith('/') ||
+        src.startsWith('data:') ||
+        src.startsWith('blob:')
+      ) {
+        return;
+      }
 
       // Treat relative assets as rooted at repo static path (copied to /public)
       node.properties.src = `/${src.replace(/^\.\//, '')}`;
