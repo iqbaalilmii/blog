@@ -31,13 +31,13 @@ for i in ans:
 # b'Correct!\n\n======================================================================\nINVESTIGATION COMPLETE!\n======================================================================\n\nGG!\n\nFlag: CJ2025{th!s_is_the_beg1nnin9_0f_y0ur_4n4lysis_on_aPT_gr0up_a.k.a_as3ng_Persistent_Threat_anyway_the_malware_sucks_sorry}\n\n======================================================================\n'
 ```
 
-Q1:  
+Q1: vertarget and sysinfo
 ![](/images-blindly/image1.png)
-Device name: just use HxD.  
 
+Device name: just use HxD (or your favorite hex editor).  
 ![](/images-blindly/image2.png)  
 
-Q2?  
+Q2?  lmvm to check module list of the kaspersky (it printed out its source path)
 ![](/images-blindly/image3.png)  
 
 Q3? Typosquatting at its finest.  
