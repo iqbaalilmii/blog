@@ -224,6 +224,26 @@ main {
   font-size: 13px;
   color: var(--muted);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.footerLinks a {
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+}
+
+.footerLinks a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .postList {
