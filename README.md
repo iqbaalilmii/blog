@@ -1,5 +1,7 @@
 ## nice-blog
 
+** fully vibecoded lmao **
+
 Static blog untuk writeup CTF berbasis Markdown, siap deploy di Vercel.
 
 ### Struktur
