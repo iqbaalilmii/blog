@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </header>
           <main>{children}</main>
           <footer className="footer">
-            <div>© 2025 keii.codes · Built with Next.js</div>
+            <div>© 2025 keii · Built with Next.js</div>
           </footer>
         </div>
       </body>
