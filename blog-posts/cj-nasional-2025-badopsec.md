@@ -32,30 +32,30 @@ for i in ans:
 ```
 
 Q1:  
-![][/images-blindly/image1.png]  
+![](/images-blindly/image1.png)
 Device name: just use HxD.  
 
-![][/images-blindly/image2.png]  
+![](/images-blindly/image2.png)  
 
 Q2?  
-![][/images-blindly/image3.png]  
+![](/images-blindly/image3.png)  
 
 Q3? Typosquatting at its finest.  
 Search the global mutex; use `Global\\` (HxD again).  
 
-![][/images-blindly/image4.png]  
+![](/images-blindly/image4.png)
 
 Q4? Encrypted directory? Just search for `.aseng` (HxD again).  
-![][/images-blindly/image5.png]  
+![](/images-blindly/image5.png)  
 
 Q5? Dump → rev.  
 Search for the CT in the minidump.  
 (Before this, we already know the binary imports both AES and RC4.) 
 
-![][/images-blindly/image6.png]  
+![](/images-blindly/image6.png)
 
 And the CT also resides in the minidump (of course, since this minidump was likely taken right after the malware was run).  
-![][/images-blindly/image7.png]
+![](/images-blindly/image7.png)
 
 I tried dumping `Kaspersky.exe`, but I got junk instead of a valid binary. 
 
@@ -63,10 +63,10 @@ That confused me, so I went back to the minidump. From the information we had, t
 
 While extracting anything that looked useful, `bulk_extractor` managed to pull an AES key from it.
 
-![][/images-blindly/image8.png]
+![](/images-blindly/image8.png)
 
 So, we have the key — we can try to decrypt it.  
-![][/images-blindly/image9.png]  
+![](/images-blindly/image9.png)
 
 And I was confused again.
 
@@ -74,11 +74,11 @@ Why wouldn’t it work?
 Then I remembered: the encryption routine comes from aseng’s own mutex, and it uses two algorithms.
 
 This wild assumption was confirmed by this:  
-![][/images-blindly/image10.png]
+![](/images-blindly/image10.png)
 
 There’s a blob with the same length as the CT we had. I tried decrypting that one, and it worked.
 
-![][/images-blindly/image11.png]  
+![](/images-blindly/image11.png)
 
 So the remaining problem was the IV. How do we find the correct IV?
 
@@ -86,7 +86,7 @@ Usually the IV is 16 bytes.
 
 I searched for the key in the minidump and found several hits; one of them looked like this:
 
-![][/images-blindly/image12.png]  
+![](/images-blindly/image12.png)
 
 The key seems to be appended with something.  
 
@@ -98,13 +98,13 @@ We know the encryption happens twice, so this should be it:
 `BD49554FE4082AF9953A5A1827DA74B5`  
 `B8D30DF0D3A5C5C624A278A315714474`
 
-![][/images-blindly/image13.png]  
+![](/images-blindly/image13.png)
 
 And the 2nd row was the correct IV for the AES!
 
 This explains everything
 
-![][/images-blindly/image14.png]  
+![](/images-blindly/image14.png)
 
 This row:  
 
