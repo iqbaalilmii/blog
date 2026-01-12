@@ -58,3 +58,5 @@ Sometimes I actively conduct research related to **Digital Forensics, Incident R
 | GEMASTIK XVIII 2025 | Telkom University, Puspresnas | Challenge Author |
 | SNI CTF 2025 | SNI Cybersecurity Team | Challenge Author |
 | TECHCOMFEST 2026 | UKM PCC Politeknik Negeri Semarang | Challenge Author |
+| NETCOMP 2026 | FORKOMTRI SV UGM | Challenge Author |
+
