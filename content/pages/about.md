@@ -4,7 +4,7 @@ Security Engineer specializing in **Digital Forensics & Incident Response (DFIR)
 
 I spend my time analyzing real-world threats, reverse engineering malicious payloads, and developing forensic methodologies that actually work in production environments. When I'm not investigating incidents, I contribute to the security community by authoring challenges for national-level competitions and sharing research on emerging attack techniques.
 
-> The writeups on this blog document my analysis of real attack patterns, forensic techniques, and security research—not just competition solutions.
+> The writeups on this blog document my analysis of real attack patterns, forensic techniques, and security research.
 
 ---
 
