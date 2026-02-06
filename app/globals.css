@@ -150,6 +150,14 @@ a:hover {
   font-size: 18px;
   color: var(--text);
   letter-spacing: -0.02em;
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+}
+
+.brand::before {
+  content: '~/';
+  color: var(--accent);
+  opacity: 0.7;
 }
 
 .brand:hover {
@@ -228,6 +236,18 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .footerLinks {
@@ -259,12 +279,29 @@ main {
   background: var(--surface);
   transition: all 0.25s ease;
   position: relative;
+  overflow: hidden;
+}
+
+.postCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.25s ease;
 }
 
 .postCard:hover {
   border-color: var(--accent-muted);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+}
+
+.postCard:hover::before {
+  transform: scaleY(1);
 }
 
 .postCard.pinned {
@@ -317,10 +354,17 @@ main {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 50%, var(--accent-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .heroSubtitle {
@@ -328,6 +372,19 @@ main {
   color: var(--muted);
   margin: 0 0 32px 0;
   line-height: 1.6;
+  position: relative;
+}
+
+.heroSubtitle::before {
+  content: '>';
+  color: var(--accent);
+  margin-right: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 .meta {

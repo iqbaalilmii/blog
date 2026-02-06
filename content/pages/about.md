@@ -1,41 +1,30 @@
-Hi there 👋
+## About Me
 
-I'm a passionate and enthusiastic person in the field of **Cyber Security**, especially in **Digital Forensics & Incident Response (DFIR)**.
+Security Engineer specializing in **Digital Forensics & Incident Response (DFIR)**, with hands-on experience in **malware analysis**, **threat hunting**, and building detection capabilities.
 
-Sometimes I actively conduct research related to **Digital Forensics, Incident Response, Malware Analysis**, and also create **CTF challenges** for various cybersecurity events.
+I spend my time analyzing real-world threats, reverse engineering malicious payloads, and developing forensic methodologies that actually work in production environments. When I'm not investigating incidents, I contribute to the security community by authoring challenges for national-level competitions and sharing research on emerging attack techniques.
+
+> The writeups on this blog document my analysis of real attack patterns, forensic techniques, and security research—not just competition solutions.
 
 ---
 
-## 🏆 Achievements
+## 🏆 Notable Wins
 
-| Event | Achievement | Organizer |
-|------|-------------|-----------|
-| FindIT CTF 2024 | Finalist | Gadjah Mada University |
-| DSTA CDDC Brainhack 2024 | Finalist | Defense Science and Technology Agency, Singapore |
+| Event | Placement | Organizer |
+|-------|-----------|-----------|
 | Hacktheon Sejong 2024 | Honorable Mention III | Sejong City Hall, South Korea |
-| Nullcon HackIM Berlin CTF 2024 | 3rd Place | NullCon |
-| Space Heroes CTF 2024 | 2nd Place | FITSEC |
-| KMIPN VI Cyber Security 2024 | 1st Place | BAKORMA |
-| Technofair 11 CTF 2024 | Finalist | Gunadarma University |
-| IT Today HackToday CTF 2024 | Finalist | IPB University |
-| GEMASTIK XVII 2024 | Finalist | Pusat Prestasi Nasional |
-| Blackhat MEA CTF 2024 | Finalist | Blackhat MEA, Saudi Arabia |
-| Informatics Fest CTF 2024 | 3rd Place | Padjajaran University |
-| COMPFEST 16 CTF 2024 | 1st Place | University of Indonesia |
-| Cyber Jawara International 2024 | 1st Place | CSIRT.id & IdNSA |
-| Interfest CTF 2024 | Finalist | Telkom University |
-| Backdoor CTF 2024 | 1st Place | InfoSecIITR |
-| ARA 6.0 CTF 2025 | Finalist | Institut Teknologi Sepuluh Nopember |
-| TAMUctf 2025 (Open Division) | 1st Place | Texas A&M University |
-| BreachCTF 2025 | 1st Place | Cyber Security Community IIT Bombay |
-| 1753CTF 2025 | 1st Place | 17 53c |
-| UMass CTF 2025 | 3rd Place | UMass Cybersecurity Club |
-| FindIT CTF 2025 | 6th Place | DTETI UGM |
-| UMDCTF 2025 | 4th Place | University of Maryland |
-| NUS GreyCTF 2025 | 2nd Place | NUS GreyHats |
-| Indonesia Vocational Olympics 2025 | 2nd Place | Vocational Faculty of UB |
-| ITSEC Summit CTF 2025 | Finalist | ITSEC |
-| Cyber Sea Game 2025 | 3rd Place | AJCCBC, Trend Micro, Thailand NCSA |
+| Cyber Jawara International 2024 | 🥇 1st | CSIRT.id & IdNSA |
+| COMPFEST 16 CTF 2024 | 🥇 1st | University of Indonesia |
+| Backdoor CTF 2024 | 🥇 1st | InfoSecIITR |
+| TAMUctf 2025 | 🥇 1st | Texas A&M University |
+| BreachCTF 2025 | 🥇 1st | IIT Bombay CSC |
+| 1753CTF 2025 | 🥇 1st | 17 53c |
+| KMIPN VI Cyber Security 2024 | 🥇 1st | BAKORMA |
+| Space Heroes CTF 2024 | 🥈 2nd | FITSEC |
+| NUS GreyCTF 2025 | 🥈 2nd | NUS GreyHats |
+| Indonesia Vocational Olympics 2025 | 🥈 2nd | Vocational Faculty of UB |
+| Nullcon HackIM Berlin 2024 | 🥉 3rd | NullCon |
+| Cyber Sea Game 2025 | 🥉 3rd | AJCCBC & Thailand NCSA |
 
 ---
 

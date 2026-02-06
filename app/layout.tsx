@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'keii.codes',
     template: '%s · keii.codes'
   },
-  description: 'Static blog for my writeups.'
+  description: 'Security research, forensic analysis, and threat intelligence by a DFIR practitioner.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </svg>
               </a>
             </div>
-            <div>© 2025 keii · Built with Next.js</div>
+            <div>© 2025 keii · Investigating incidents, one artifact at a time</div>
           </footer>
         </div>
       </body>
