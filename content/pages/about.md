@@ -25,7 +25,7 @@ I spend my time analyzing real-world threats, reverse engineering malicious payl
 | Indonesia Vocational Olympics 2025 | 🥈 2nd | Vocational Faculty of UB |
 | Nullcon HackIM Berlin 2024 | 🥉 3rd | NullCon |
 | Cyber Sea Game 2025 | 🥉 3rd | AJCCBC & Thailand NCSA |
-| Informatics Fest 2025 | 🥉 3rd | Padjajaran University, PETIR |
+| Informatics Fest 2024 | 🥉 3rd | Padjajaran University, PETIR |
 
 ---
 
