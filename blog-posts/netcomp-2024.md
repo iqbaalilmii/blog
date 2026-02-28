@@ -1,8 +1,11 @@
 ---
-title: "NETCOMP 3.0 - X11 Protocol"
+title: "X Window System Protocol (X11) Analysis, Parsing the Graphical Packets - NETCOMP 3.0"
 pubDate: "2025-01-07"
 description: 'X11 Protocol Challenge on NETCOMP 3.0 Qualification'
 ---
+
+The X Window System version 11 (commonly refered to as X11), is a protocol and software for managing graphical displays on Unix-like operating systems
+
 ![image](https://hackmd.io/_uploads/SkmZq8YIyl.png)
 
 noticed the packet is transmitted using X11 Protocol
