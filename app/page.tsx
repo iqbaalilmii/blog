@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1 className="h1">keii.codes</h1>
+      <h1 className="h1">keii | blog</h1>
       <p className="heroSubtitle">Security research, forensic deep-dives, and threat analysis from the trenches.</p>
 
       {pinnedPosts.length > 0 && (

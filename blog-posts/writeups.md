@@ -50,7 +50,7 @@ description: 'my writeup collections'
 | **[Wargames MY 2024](https://github.com/jonscafe/ctfs-write-ups/tree/main/wargames-my-2024)** | Rank 25 | SNI | Solved All Forensic |
 | **[NETCOMP 3.0 Quals - 2025](https://github.com/jonscafe/ctfs-write-ups/tree/main/netcomp-3.0-2024)** | - | UPSOLVE | X11 Protocol |
 | **[Cyber Jawara National 2024 - Qualification](https://github.com/jonscafe/ctfs-write-ups/tree/main/cj-nasional-2024)** | - | SNI (FLAKEITO) | Solved All Forensic |
-| **[Cyber Jawara National 2024 - Final](https://keii.codes/blog/sandboxed-debugging)** | - | Challenge Author | Sandboxed Debugging (Forensic) |
+| **[Cyber Jawara National 2024 - Final](https://keii.malwr.es/blog/sandboxed-debugging)** | - | Challenge Author | Sandboxed Debugging (Forensic) |
 | **[ARA 6.0 2025 - Qualification](https://github.com/jonscafe/ctfs-write-ups/tree/main/ara-2025-quals)** | Rank 6 | Tempe Bacem | Solved All Forensic |
 | **[FindIT 2025 - Qualification](https://github.com/jonscafe/ctfs-write-ups/tree/main/findit-2025-quals)** | - | KEITO | Solved All Forensic |
 | **[ITFEST 2025 - Qualification](https://github.com/jonscafe/ctfs-write-ups/tree/main/itfest-2025-quals)** | - | KEITO | Solved All Forensic |
