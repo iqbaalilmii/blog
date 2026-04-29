@@ -20,7 +20,7 @@ export default function HomePage() {
 
       {pinnedPosts.length > 0 && (
         <>
-          <h2 className="sectionTitle">📌 Pinned</h2>
+          <h2 className="sectionTitle">Pinned</h2>
           <section className="postList">
             {pinnedPosts.map((p) => (
               <article key={p.slug} className="postCard pinned">
@@ -37,7 +37,7 @@ export default function HomePage() {
         </>
       )}
 
-      <h2 className="sectionTitle">🕐 Recent posts</h2>
+      <h2 className="sectionTitle">Recent posts</h2>
       <section className="postList">
         {recentPosts.map((p) => (
           <article key={p.slug} className="postCard">
