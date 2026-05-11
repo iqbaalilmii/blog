@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </svg>
                   </a>
                 </div>
-                <div>© 2025 keii · Investigating incidents, one artifact at a time</div>
+                <div>© 2026 keii · Investigating incidents, one artifact at a time</div>
               </footer>
             </div>
           </div>
