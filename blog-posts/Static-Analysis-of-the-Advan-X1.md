@@ -6,8 +6,6 @@ description: 'Static Analysis of the Advan X1's Default Launcher'
 
 **TL;DR**: I pulled the stock firmware of an Advan X1 budget Android phone, extracted the default launcher from `super.img`, and found embedded SDK code capable of downloading and executing remote `.dex` files, running shell commands, and silently installing APKs, all baked into the home screen launcher that ships with the device.
 
----
-
 ## Introduction
 
 Budget Android phones are everywhere. Across South East Asia, Africa, and Latin America, they are often a person's first and only smartphone. Users generally trust what comes out of the box, and that trust is rarely questioned.
@@ -19,8 +17,6 @@ The default launcher, `PriLauncher3QuickStep`, is based on AOSP's Launcher3, but
 VirusTotal flags the APK with [multiple detections](https://www.virustotal.com/gui/file/a5d594c8de979074f2d22b37bb01b04fd738295a9388862141252201e028813e). This post walks through what I found when I looked at why.
 
 ![alt text](images-advanx1/image-3.png)
-
----
 
 ## Methodology
 
@@ -39,8 +35,6 @@ A public firmware dump of this same device is [available on GitHub](https://gith
 **A note on scope:** This analysis is based on static analysis of decompiled code and extracted strings. I did not perform dynamic analysis on a live device, so behavioral claims are inferred from the code rather than observed at runtime. Where I make inferences, I'll try to be explicit about it.
 
 ![alt text](images-advanx1/image.png)
-
----
 
 ## Finding 1: A General-Purpose Shell Execution Wrapper
 
@@ -74,8 +68,6 @@ private static CmdResult exeCmdArgs(String[] strArr) throws Exception {
 The method accepts an arbitrary `String[]` command array, executes it, captures both stdout and stderr, and returns the result in a `CmdResult` wrapper. The same class also exposes `installByCmd` and `uninstallByCmd` methods, the naming strongly suggests these invoke `pm install` / `pm uninstall` via the shell.
 
 Since the APK is located in `priv-app/`, it's treated by Android as a privileged system application. This typically grants it a broader set of permissions than a user-installed app would receive, though the exact privilege level also depends on the app's declared UID, its platform signature status, and the device's SELinux policy. What we can say is that commands executed through this wrapper would run under the launcher's process identity, which, given its `priv-app` placement, is likely more permissioned than a typical third-party app.
-
----
 
 ## Finding 2: A Remote Code Loading Framework
 
@@ -124,8 +116,6 @@ This means a loaded plugin can bring its own UI elements, layouts, strings, and 
 
 To be clear: `DexClassLoader` itself is a legitimate Android API, and some apps use it for valid purposes like modular feature delivery. But the presence of remote URL fields, an encryption layer, and the fact that this lives inside a home screen launcher, which users cannot easily replace or disable, makes the context here considerably more concerning than a typical plugin system.
 
----
-
 ## Finding 3: A Silent Installation Pipeline
 
 String analysis reveals a set of method and class names that outline a silent app installation workflow. The central data class appears to be `PullSilentEven` (the typo is in the original source):
@@ -153,8 +143,6 @@ This indicates the code checks whether the device screen is locked before procee
 
 The `planId` field in `PullSilentEven` and related classes like `PullMessager` suggests a server-side orchestration model, a backend can define "plans" that get pushed to devices, potentially coordinating batch app installations or plugin deployments across a fleet.
 
----
-
 ## Finding 4: Hardcoded Remote Endpoints
 
 The DEX file contains two hardcoded domains associated with SZPrize:
@@ -170,8 +158,6 @@ There's also a practical long-term risk: if `szprize.cn` subdomains are ever aba
 
 An additional embedded string, `0a14fc502731prizecce34`, may be a hardcoded API key or device group identifier, though its exact purpose wasn't confirmed.
 
----
-
 ## Finding 5: The `com.hs` SDK Ecosystem
 
 The capabilities described above are not part of AOSP's Launcher3. They come from a set of SDKs bundled under the `com.hs` and `com.pri` namespaces:
@@ -186,8 +172,6 @@ The capabilities described above are not part of AOSP's Launcher3. They come fro
 | `com.pri.app.beans` | Data models for push events (`PullSilentEven`, `PullMessager`, `PullToastAD`, `DeepLinkTable`) |
 
 The `PullToastAD` and `DeepLinkTable` beans suggest the SDK also handles ad delivery, pushing toast-style notifications and deep-linking users to apps like `com.prize.browser` and `com.prize.inforstream`.
-
----
 
 ## Putting It Together
 
@@ -216,8 +200,6 @@ Based on the code and string evidence, the following flow appears to be possible
 
 I want to be clear that this is a reconstructed flow based on static analysis, I'm connecting the dots between class names, method signatures, string references, and code paths. I haven't intercepted live traffic or triggered this pipeline on a running device. But the pieces fit together in a way that's hard to interpret benignly.
 
----
-
 ## The Gray Area
 
 So is this malware? It depends on where you draw the line.
@@ -242,13 +224,9 @@ The problem is that intent is not a technical control. The same infrastructure t
 
 This is why VirusTotal flags it. Not necessarily because it's *doing* something malicious right now, but because the machinery it ships with is indistinguishable from what a threat actor would build.
 
----
-
 ## Affected Devices
 
 This analysis focused on the **Advan X1** (`ADVAN_6781_S34NF2_V4.0_20250304`), but the `com.hs` SDK and SZPrize firmware stack appear across multiple budget Android brands. Any device shipping `PriLauncher3QuickStep` with the `com.hs.p.*` / `com.hs.cld.*` packages likely contains the same code. The exact scope would require surveying firmware dumps across other SZPrize-derived devices.
-
----
 
 ## Recommendations
 
@@ -264,8 +242,6 @@ This analysis focused on the **Advan X1** (`ADVAN_6781_S34NF2_V4.0_20250304`), b
 - The SZPrize firmware supply chain warrants broader investigation: other devices using the same ODM base should be examined
 - Firmware dumps can be scanned for `com.hs.cld` and `com.hs.p.dx` package references as a quick triage
 - The `launcher.szprize.cn` domain should be monitored for registration changes
-
----
 
 ## Indicators of Compromise (IOCs)
 
@@ -287,15 +263,11 @@ This analysis focused on the **Advan X1** (`ADVAN_6781_S34NF2_V4.0_20250304`), b
 | **Method** | `installByCmd` / `uninstallByCmd` |
 | **Method** | `silentInstall` / `silentDownload` |
 
----
-
 ## Tools Used
 
 - [lpunpack](https://github.com/unix3dgforce/lpunpack): `super.img` dynamic partition extractor
 - [ext2explore](https://sourceforge.net/projects/ext2read/): ext4 filesystem image browser on Windows
 - [JADX](https://github.com/skylot/jadx): DEX bytecode to readable Java decompiler
 - [VirusTotal](https://www.virustotal.com/): malware analysis platform
-
----
 
 *This research was conducted independently for educational and security awareness purposes. All findings are based on static analysis of publicly available firmware. If you are a manufacturer or vendor affected by these findings, I welcome responsible discussion.*
