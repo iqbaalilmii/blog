@@ -4,8 +4,6 @@ pubDate: "2026-05-31"
 description: 'Static Analysis of the Advan X1's Default Launcher'
 ---
 
-# Your Home Screen Could Be a Backdoor: Static Analysis of the Advan X1's Default Launcher
-
 **TL;DR**: I pulled the stock firmware of an Advan X1 budget Android phone, extracted the default launcher from `super.img`, and found embedded SDK code capable of downloading and executing remote `.dex` files, running shell commands, and silently installing APKs, all baked into the home screen launcher that ships with the device.
 
 ---
