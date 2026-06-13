@@ -161,7 +161,7 @@ RPCS uses two glyph storage strategies.
 
 The solver outputs a contact sheet of all decoded glyphs, rotated 90° to account for `ROTATE = RIGHT`, making visual identification of inline glyphs straightforward.
 
-<img src="images-ricohrev/flag_txt_g4_chunks.png" style="max-width: 50%; height: 50%;">
+![Decoded glyph contact sheet, 26 chunks, rotated 90° for reading](images-ricohrev/flag_txt_g4_chunks.png)
 
 `flag-txt.bin` contains **26 chunks, 14 cached, 12 inline**.
 
