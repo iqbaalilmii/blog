@@ -33,7 +33,7 @@ Windows has a performance mechanism called **Prefetch**. Every time an executabl
 - All files and modules loaded during execution
 - Volume information
 
-![Prefetch file mechanism diagram](/images-pf/images.png)
+![Prefetch file mechanism diagram](/images-pf/image.png)
 
 Because prefetch files are stored on disk and loaded into memory for performance reasons, **they often persist inside a memory dump even after the process has terminated.** This makes them a powerful forensic artifact for reconstructing execution history that volatile memory alone cannot provide.
 
