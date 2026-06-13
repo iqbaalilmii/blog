@@ -1,10 +1,10 @@
 ## About Me
 
-Security Engineer specializing in **Digital Forensics & Incident Response (DFIR)**, with hands-on experience in **malware analysis**, **threat hunting**, and building detection capabilities.
+Security Engineer specializing in **Digital Forensics & Incident Response (DFIR)**, with hands-on experience in **malware analysis**, **threat hunting and simulations**
 
 I spend most of my time reverse engineering malware, analyzing forensic artifacts, and exploring how real-world systems behave under unusual or adversarial conditions. A lot of my work starts from simple curiosity, finding interesting behaviors in operating systems, browsers, virtualization platforms, or applications, then digging deeper to understand how they can be abused, analyzed, or detected. Outside of my day-to-day job, I design forensic and reverse engineering challenges for CTF competitions and write technical deep-dives on anti-forensics, runtime malware behavior, memory forensics, and systems internals.
 
-> The writeups on this blog document my analysis of attack patterns, forensic techniques, and security research.
+> The writeups on this blog document my analysis of attack patterns, forensic techniques, and both forensic and security research.
 
 ---
 
