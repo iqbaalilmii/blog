@@ -6,7 +6,7 @@ import ThemeToggle from './components/ThemeToggle';
 export const metadata: Metadata = {
   title: {
     default: 'keii.malwr.es',
-    template: '%s · keii'
+    template: '%s · 4Better'
   },
   description: 'Security research, forensic analysis, and threat intelligence by a DFIR practitioner.'
 };
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {' · '}
             <a href="https://www.linkedin.com/in/iqbaalilmii/" target="_blank" rel="noopener noreferrer">linkedin</a>
             {' · '}
-            <span>© 2026 keii</span>
+            <span>© 2026 4Better</span>
           </p>
         </footer>
       </body>
