@@ -5,8 +5,8 @@ import ThemeToggle from './components/ThemeToggle';
 
 export const metadata: Metadata = {
   title: {
-    default: 'keii.malwr.es',
-    template: '%s · keii'
+    default: 'fourbetter',
+    template: '%s · fourbetter'
   },
   description: 'Security research, forensic analysis, and threat intelligence by a DFIR practitioner.'
 };
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="page-header">
           <div className="grid">
             <div className="logo">
-              <Link href="/">keii</Link>
+              <Link href="/">fourbetter</Link>
             </div>
             <p className="tagline">security research &amp; dfir</p>
             <hr className="lifted" />
@@ -57,11 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer>
           <p className="privacy">
-            <a href="https://github.com/jonscafe" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://github.com/iqbaalilmii" target="_blank" rel="noopener noreferrer">github</a>
             {' · '}
-            <a href="https://www.linkedin.com/in/jomrbn/" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a href="https://www.linkedin.com/in/iqbaalilmii/" target="_blank" rel="noopener noreferrer">linkedin</a>
             {' · '}
-            <span>© 2026 keii</span>
+            <span>© 2026 fourbetter</span>
           </p>
         </footer>
       </body>
